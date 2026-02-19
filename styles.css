@@ -127,7 +127,7 @@ nav {
 .hero {
   position: relative;
   height: auto;
-  min-height: 100vh;
+  min-height: 120vh;
   background: url('bg/backgroundvector1up.png') bottom center/cover no-repeat;
   margin-top: -110px;
   padding-top: 110px;
@@ -148,7 +148,7 @@ nav {
 
 
 .hero-left {
-  padding: 60px 80px 60px 60px;
+  padding: 40px 80px 60px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,15 +168,30 @@ nav {
 }
 
 .hero-sub {
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(35px, 1.8vw, 50px);
   font-weight: 600;
   color: var(--text-dark);
-  margin-top: 20px;
-  line-height: 1.5;
-  max-width: 380px;
+  margin-top: 10px;
+  max-width: 560px;
   animation: slideUp 0.7s ease 0.35s both;
 }
 
+.hero-sub2 {
+  font-size: clamp(35px, 1.8vw, 50px);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 1px;
+  max-width: 560px;
+  animation: slideUp 0.7s ease 0.35s both;
+}
+.hero-sub3 {
+  font-size: clamp(35px, 1.8vw, 50px);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 1px;
+  max-width: 560px;
+  animation: slideUp 0.7s ease 0.35s both;
+}
 .hero-cta {
   display: flex;
   flex-direction: column;
