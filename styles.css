@@ -404,7 +404,6 @@ nav {
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
   text-stroke: 2px white; 
-  letter-spacing: -2px;
   line-height: 1;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -415,7 +414,7 @@ nav {
   font-size: 16px;
   line-height: 1.8;
   color: var(--text-dark);
-  max-width: 700px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
