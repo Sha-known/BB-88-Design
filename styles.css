@@ -207,9 +207,9 @@ nav {
   background: var(--green-dark);
   color: var(--white);
   font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  padding: 16px 36px;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 50px;
   border-radius: 50px;
   text-decoration: none;
   width: fit-content;
@@ -230,7 +230,7 @@ nav {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
   width: fit-content;
   transition: all 0.2s;
 }
@@ -240,8 +240,8 @@ nav {
 .btn-video:hover .play-icon::after { border-left-color: var(--green-mid); }
 
 .play-icon {
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid var(--text-dark);
   display: flex;
@@ -306,41 +306,73 @@ nav {
 
 .about-card {
   position: relative;
-  background: #fff;
-  border-radius: 40px 0 40px 0;
   width: 200px;
-  height: 220px;
+  height: 210px;
+  cursor: pointer;
+}
+
+/* Bottom card — dark green, offset top-right */
+.about-card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 40px 0px 40px 0px;
+  top: -10px;        /* shifted up */
+  right: -10px;      /* shifted right */
+  z-index: 0;
+  transition: background 0.3s;
+}
+
+
+/* Front card — white */
+.about-card {
+  background: var(--green-dark) ;
+  border-radius: 40px 0px 40px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  overflow: visible; 
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
   padding: 20px;
   text-align: center;
+  border: 2px solid #d4e8c2;
   z-index: 1;
+  transition: background 0.3s, color 0.3s;
 }
-
-
 
 .about-card img {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  margin-bottom: 15px;
-  z-index: 1;
+  margin-bottom: 14px;
   position: relative;
+  z-index: 2;
 }
 
 .about-card h5 {
   font-family: 'Anton', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--green-dark);
-  margin: 0;
-  z-index: 1;
   position: relative;
+  z-index: 2;
+  transition: color 0.3s;
 }
 
+/* HOVER — swap colors */
+.about-card:hover {
+  background: #fff;
+}
+
+.about-card:hover::before {
+  background:var(--green-dark);
+  border: 2px solid #d4e8c2;
+}
+
+.about-card:hover h5 {
+  color: #fff;
+}
 
 .about-box {
   background: var(--white);

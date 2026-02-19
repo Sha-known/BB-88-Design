@@ -63,19 +63,19 @@
   </div>
 
   <div class="about-images">
-  <div class="about-card">
-    <img src="icon/icondesignideas.png" alt="">
-    <h5>Design Ideas</h5>
-  </div>
-  <div class="about-card">
+  <div class="about-card" data-hover-icon="icon/iconeffect/icon2designideas.png">
+  <img src="icon/icondesignideas.png" alt="">
+  <h5>Design Ideas</h5>
+</div>
+  <div class="about-card" data-hover-icon="icon/iconeffect/icon1Digital&Mainstream.png">
     <img src="icon/iconDigital&Mainstream.png" alt="">
     <h5>Digital & Mainstream</h5>
   </div>
-  <div class="about-card">
+  <div class="about-card" data-hover-icon="icon/iconeffect/icon3Brand&Identity.png">
     <img src="icon/iconBrand&Identity.png" alt="">
     <h5>Brand & Identity</h5>
   </div>
-  <div class="about-card">
+  <div class="about-card" data-hover-icon="icon/iconeffect/icon4DigitalSolutions.png">
     <img src="icon/iconDigitalSolutions.png" alt="">
     <h5>Digital Solutions</h5>
   </div>
@@ -116,6 +116,15 @@
 </section>
 
 <script>
+document.querySelectorAll('.about-card').forEach(card => {
+  const img = card.querySelector('img');
+  const original = img.src;
+  const hovered = card.dataset.hoverIcon;
+
+  card.addEventListener('mouseenter', () => img.src = hovered);
+  card.addEventListener('mouseleave', () => img.src = original);
+});
+
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
