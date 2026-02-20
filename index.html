@@ -114,6 +114,7 @@
 
 </section>
 
+<!-- services -->
 <section id="services" class="services-section">
   <img src="vector/vector2.png" class="vector-decor top-left" alt="">
   <img src="vector/vector2.0.png" class="vector-decor top-right" alt="">
@@ -151,7 +152,7 @@
   </div>
 </section>
 
-<!-- portfolio-->
+<!-- partner logo -->
 <section class="partner-companies">
   <div class="carousel-viewport">
     <div class="carousel-slide active">
@@ -185,6 +186,7 @@
   </div>
 </section>
 
+<!-- portfolio-->
 <section id="portfolio" class="portfolio-section">
   <div class="portfolio-header">
     <h2 class="portfolio-main-title">Portfolio</h2>
@@ -262,7 +264,7 @@
     <div class="portfolio-item">
       <div class="portfolio-card">
         <div class="portfolio-img-container">
-          <img src="picture/pic7.png" alt="Greenhouse Paradise">
+          <img src="picture/pic7.png" alt="MHR">
         </div>
         <div class="portfolio-label">MHR</div>
       </div>
@@ -272,7 +274,7 @@
     <div class="portfolio-item">
       <div class="portfolio-card">
         <div class="portfolio-img-container">
-          <img src="picture/pic8.png" alt="Greenhouse Paradise">
+          <img src="picture/pic8.png" alt="Migs">
         </div>
         <div class="portfolio-label">Migs</div>
       </div>
@@ -282,7 +284,7 @@
     <div class="portfolio-item">
       <div class="portfolio-card">
         <div class="portfolio-img-container">
-          <img src="picture/pic9.png" alt="Greenhouse Paradise">
+          <img src="picture/pic9.png" alt="Filipino Land">
         </div>
         <div class="portfolio-label">Filipino Land</div>
       </div>
@@ -294,31 +296,9 @@
   </div>
 </section>
 
-<script>
-document.querySelectorAll('.dot').forEach(dot => {
-  dot.addEventListener('click', () => {
-    const index = parseInt(dot.dataset.index);
-    document.querySelectorAll('.carousel-slide').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
-    document.querySelectorAll('.carousel-slide')[index].classList.add('active');
-    dot.classList.add('active');
-  });
-});
-</script>
 
-<script>
-document.querySelectorAll('.about-card').forEach(card => {
-  const img = card.querySelector('img');
-  const original = img.src;
-  const hovered = card.dataset.hoverIcon;
 
-  card.addEventListener('mouseenter', () => img.src = hovered);
-  card.addEventListener('mouseleave', () => img.src = original);
-});
-
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
-</script>
+-<!-- js script-->
+<script src="script.js"></script>
 </body>
 </html>
