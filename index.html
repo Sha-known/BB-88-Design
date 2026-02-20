@@ -20,9 +20,9 @@
     </div>
 
     <div class="nav-main-links">
-      <a href="#" class="active">Home</a>
+      <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
-      <a href="#">Services</a>
+      <a href="#services">Services</a>
       <a href="#">Portfolio</a>
       <a href="#">Team</a>
       <a href="#">Contact</a>
@@ -38,7 +38,7 @@
 </nav>
 
 <!-- HERO -->
- <section class="hero">
+ <section id="home" class="hero">
   <div class="hero-left">
     <h1 class="hero-title">WELCOME TO BB88</h1>
     <p class="hero-sub">Quickly start your project now </p>
@@ -151,15 +151,160 @@
   </div>
 </section>
 
+<!-- portfolio-->
 <section class="partner-companies">
-  <img src="logo/logo1.png" class="logo-companies" alt="">
-  <img src="logo/logo2.png" class="logo-companies" alt="">
-  <img src="logo/logo3.png" class="logo-companies" alt="">
-  <img src="logo/logo4.png" class="logo-companies" alt="">
-  <img src="logo/logo5.png" class="logo-companies" alt="">
-  <img src="logo/logo6.png" class="logo-companies" alt="">
-  <img src="logo/logo7.png" class="logo-companies" alt="">
+  <div class="carousel-viewport">
+    <div class="carousel-slide active">
+      <img src="logo/logo1.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo2.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo3.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo4.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo5.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo6.png" class="logo-companies" alt="">
+    </div>
+    <div class="carousel-slide">
+      <img src="logo/logo7.png" class="logo-companies" alt="">
+    </div>
+  </div>
+  <div class="carousel-dots">
+    <button class="dot active" data-index="0"></button>
+    <button class="dot" data-index="1"></button>
+    <button class="dot" data-index="2"></button>
+    <button class="dot" data-index="3"></button>
+    <button class="dot" data-index="4"></button>
+  </div>
 </section>
+
+<section id="portfolio" class="portfolio-section">
+  <div class="portfolio-header">
+    <h2 class="portfolio-main-title">Portfolio</h2>
+  </div>
+
+  <div class="portfolio-filters">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Brand Design</button>
+    <button class="filter-btn">Mobile App</button>
+    <button class="filter-btn">Soc Med</button>
+    <button class="filter-btn">Multimedia</button>
+    <button class="filter-btn">Print Media</button>
+    <button class="filter-btn">Web App</button>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic1.png" alt="BC Bagsakan Pickup">
+        </div>
+        <div class="portfolio-label">BC Bagsakan Pickup</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic2.png" alt="Bio-MOBAPP">
+        </div>
+        <div class="portfolio-label">Bio-MOBAPP</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic3.png" alt="BC Bagsakan Delivery">
+        </div>
+        <div class="portfolio-label">BC Bagsakan Delivery</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic4.png" alt="Biorganism">
+          <div class="portfolio-overlay">
+             <p>Katulong mo sa pagsasaka</p>
+          </div>
+        </div>
+        <div class="portfolio-label">Biorganism</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic5.png" alt="EM & A Architectural">
+        </div>
+        <div class="portfolio-label">EM & A Architectural</div>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic6.png" alt="Greenhouse Paradise">
+        </div>
+        <div class="portfolio-label">Greenhouse Paradise</div>
+      </div>
+    </div>
+
+    
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic7.png" alt="Greenhouse Paradise">
+        </div>
+        <div class="portfolio-label">MHR</div>
+      </div>
+    </div>
+
+    
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic8.png" alt="Greenhouse Paradise">
+        </div>
+        <div class="portfolio-label">Migs</div>
+      </div>
+    </div>
+
+    
+    <div class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="portfolio-img-container">
+          <img src="picture/pic9.png" alt="Greenhouse Paradise">
+        </div>
+        <div class="portfolio-label">Filipino Land</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-footer">
+    <a href="#" class="btn-see-more">See More</a>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.dot').forEach(dot => {
+  dot.addEventListener('click', () => {
+    const index = parseInt(dot.dataset.index);
+    document.querySelectorAll('.carousel-slide').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.carousel-slide')[index].classList.add('active');
+    dot.classList.add('active');
+  });
+});
+</script>
 
 <script>
 document.querySelectorAll('.about-card').forEach(card => {

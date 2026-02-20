@@ -553,19 +553,16 @@ nav {
 .partner-companies {
   position: relative;
   background: var(--green-pale);
-  padding: 50px 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow: hidden; 
+  padding: 50px 0;
+  overflow: hidden;
 }
 
 .partner-companies::before {
   content: '';
   display: block;
   width: 100%;
-  height: 6px; 
-  background-color: var(--green-dark); 
+  height: 6px;
+  background-color: var(--green-dark);
   position: absolute;
   top: 0;
   left: 0;
@@ -575,21 +572,210 @@ nav {
   content: '';
   display: block;
   width: 100%;
-  height: 6px; 
-  background-color: var(--green-dark); 
+  height: 6px;
+  background-color: var(--green-dark);
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
+.carousel-viewport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 40px;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  background: transparent;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.carousel-slide.active {
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(72, 136, 123, 0.18);
+}
+
 .logo-companies {
+  width: 7rem;
+  max-width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+  transition: transform 0.25s;
+}
+
+.carousel-slide.active .logo-companies {
+  transform: scale(1.2);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+.dot {
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.dot.active {
+  background: var(--green-light);
+}
+
+.dot:nth-child(1), .dot:nth-child(5) { width: 8px;  height: 8px;  }
+.dot:nth-child(2), .dot:nth-child(4) { width: 11px; height: 11px; }
+.dot:nth-child(3)                    { width: 14px; height: 14px; }
+
+
+/* portfolio */
+.portfolio-section {
+  padding: 80px 40px;
+  background-color: #f9f9f9; /* light bg */
+  text-align: center;
+}
+
+.portfolio-main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(40px, 5vw, 50px);
+  color: var(--green-dark);
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* filter */
+.portfolio-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  border: none;
   background: none;
-  flex: 1;
-  max-width: 10rem;
-  height: 10rem;
+  padding: 8px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--green-dark);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+/* Grid Layout= */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.portfolio-card {
+  background-color: var(--green-dark);
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-img-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.portfolio-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Label Buttons */
+.portfolio-label {
+  margin-top: 15px;
+  background: #fff;
+  color: var(--green-dark);
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* See More Button */
+.btn-see-more {
+  display: inline-block;
+  background: var(--green-dark);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-see-more:hover {
+  background: var(--green-mid);
+  transform: scale(1.05);
+}
+
+/* Overlay for the "Biorganism" effect in your image */
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-overlay p {
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 
