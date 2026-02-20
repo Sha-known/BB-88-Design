@@ -836,6 +836,50 @@ nav {
 }
 
 @media (max-width: 900px) {
+.hero-left {
+  padding: 20px 40px 30px 30px;
+}
+
+.hero-title {
+  font-weight: 500;
+  font-size: clamp(30px, 6vw, 30px);
+}
+
+.hero-sub {
+  font-size: clamp(20px, 1.8vw, 35px);
+  margin-top: 5px;
+  max-width: 330px;
+}
+
+.hero-sub2 {
+  font-size: clamp(20px, 1.8vw, 35px);
+  margin-top: 1px;
+  max-width: 330px;
+}
+.hero-sub3 {
+  font-size: clamp(20px, 1.8vw, 35px);
+  max-width: 330px;
+}
+
+.hero-cta {
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btn-primary {
+  font-size: 10px;
+  padding: 10px 50px;
+}
+
+.btn-video {
+  font-size: 10px;
+}
+
+.play-icon {
+  width: 25px;
+  height: 25px;
+}
+
   .about-images {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
