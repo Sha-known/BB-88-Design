@@ -959,6 +959,155 @@ nav {
   transform: translateY(0);
 }
 
+/* recent post */
+.posts-section {
+  position: relative;
+  padding: 100px 40px;
+  background-color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.vector-posts-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  z-index: 1;
+}
+
+.posts-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.posts-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(35px, 5vw, 45px);
+  color: var(--green-dark);
+  font-weight: 800;
+  -webkit-text-stroke: 1px #fff;
+}
+
+
+.posts-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.post-card {
+  flex: 1;
+  background: #fff;
+  border: 4px solid var(--green-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.post-img-box {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.post-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.post-content {
+  padding: 20px;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-category {
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* title */
+.post-title-label {
+  background: #fff;
+  border: 2px solid var(--green-dark);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.post-title-label h3 {
+  color: var(--green-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+
+.post-title-label.featured {
+  background: var(--green-dark);
+}
+
+.post-title-label.featured h3 {
+  color: #fff;
+}
+
+.post-content p {
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* link & button */
+.read-more-link {
+  color: var(--green-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.btn-read-more {
+  background: var(--green-dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: fit-content;
+  margin-top: auto;
+  transition: background 0.2s;
+}
+
+.btn-read-more:hover {
+  background: var(--green-mid);
+}
 
 
 
