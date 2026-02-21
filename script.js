@@ -68,12 +68,43 @@ function toggleMenu() {
 
 
 //carousel button
-document.querySelectorAll('.dot').forEach(dot => {
-  dot.addEventListener('click', () => {
-    const index = parseInt(dot.dataset.index);
-    document.querySelectorAll('.carousel-slide').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
-    document.querySelectorAll('.carousel-slide')[index].classList.add('active');
-    dot.classList.add('active');
-  });
+const track = document.getElementById('carouselTrack');
+const spotlight = document.getElementById('carouselSpotlight');
+const dots = document.querySelectorAll('.dot');
+let logoData = Array.from(track.children);
+
+function updateCarousel(targetId, dotIdx) {
+    // 1. Reorder Logic 
+    const currentIndex = logoData.findIndex(logo => logo.dataset.id == targetId);
+    const rotationNeeded = currentIndex - 3; 
+    if (rotationNeeded > 0) {
+        for (let i = 0; i < rotationNeeded; i++) logoData.push(logoData.shift());
+    } else if (rotationNeeded < 0) {
+        for (let i = 0; i < Math.abs(rotationNeeded); i++) logoData.unshift(logoData.pop());
+    }
+
+    // 2. Refresh DOM and set Active Class
+    track.innerHTML = '';
+    logoData.forEach((logo, i) => {
+        logo.classList.toggle('active', i === 3);
+        track.appendChild(logo);
+    });
+
+    // 3. Update Dots
+    dots.forEach((d, i) => d.classList.toggle('active', i === dotIdx));
+}
+
+dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+        const centerLogoId = logoData[idx + 1].dataset.id; 
+        updateCarousel(centerLogoId, idx);
+    });
 });
+
+// Auto-rotate every 3 seconds
+setInterval(() => {
+    logoData.push(logoData.shift());
+    updateCarousel(logoData[3].dataset.id, 2);
+}, 3000);
+
+window.onload = () => updateCarousel(logoData[3].dataset.id, 2);
