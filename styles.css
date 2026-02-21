@@ -426,7 +426,7 @@ nav {
 /* SERVICES SECTION */
 .services-section {
   position: relative;
-  background: #fdf6e3; 
+  background: url('bg/background2.png') center center/cover no-repeat;
   padding: 100px 40px;
   min-height: 150vh;
   display: flex;
@@ -1337,7 +1337,7 @@ nav {
 @media (max-width: 480px) {
   .services-section {
     padding: 60px 15px;
-    min-height: auto;       
+    min-height: 200vh;       
   }
 
   .service-card {
