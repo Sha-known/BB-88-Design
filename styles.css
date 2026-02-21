@@ -528,6 +528,12 @@ nav {
   margin-bottom: 15px;
 }
 
+.services-header {
+  position: relative;
+  z-index: 2; 
+  margin-bottom: 50px;
+}
+
 .services-title {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(35px, 5vw, 50px);
