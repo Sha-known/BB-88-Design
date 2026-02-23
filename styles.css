@@ -1060,31 +1060,6 @@ nav {
   margin: 0;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 768px) {
-  .team-grid, .team-featured-row {
-    gap: 15px;
-  }
-
-  .team-card { 
-    width: calc(50% - 15px); 
-    min-width: 150px;
-    min-height: 180px;
-  }
-  
-  .team-description-box {
-    width: 95vw; 
-  }
-}
-
-@media (max-width: 480px) {
-  .team-card {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-
 /* Post Section Styles */
 .posts-section {
   position: relative;
@@ -1406,6 +1381,83 @@ nav {
     to { opacity: 1; transform: translateY(0); }
   }
 
+@media (max-width: 992px) {
+
+  .contact-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
+  }
+
+  .contact-info {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+    padding-left: 50px;
+  }
+
+  .contact-container {
+    width: 95%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .map-box {
+    height: 250px;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .map-box {
+    height: 200px;
+  }
+
+  .info-item {
+    margin-left: 25px;
+    padding: 15px;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    left: -30px;
+  }
+
+  .icon-circle img {
+    width: 45px;
+  }
+
+  .info-text {
+    margin-left: 35px;
+    padding: 12px 15px;
+  }
+
+  .contact-form input {
+    height: 3.5rem;
+  }
+
+  .contact-form textarea {
+    height: 10rem;
+  }
+
+.branding-text {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.branding-text p {
+  text-align: center;
+}
+}
 
 
 @media (max-width: 1250px) {
@@ -1422,6 +1474,29 @@ nav {
   .about-card img {
     max-width: 70px;
     max-height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid, .team-featured-row {
+    gap: 15px;
+  }
+
+  .team-card { 
+    width: calc(50% - 15px); 
+    min-width: 150px;
+    min-height: 180px;
+  }
+  
+  .team-description-box {
+    width: 95vw; 
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
