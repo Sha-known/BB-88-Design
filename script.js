@@ -108,3 +108,77 @@ setInterval(() => {
 }, 3000);
 
 window.onload = () => updateCarousel(logoData[3].dataset.id, 2);
+
+//contactform
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const subjectInput = document.getElementById('contactSubject');
+    const messageInput = document.getElementById('contactMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    const emailTooltip = document.getElementById('emailTooltip');
+
+    const successModal = document.getElementById('successModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function isValidEmail(email) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+
+  
+    function validateForm() {
+      const emailVal = emailInput.value.trim();
+      
+      if (emailVal.length > 0) {
+        if (!emailVal.includes('@')) {
+          emailTooltip.textContent = "Please include an '@' in the email address.";
+          emailTooltip.classList.add('show');
+        } else if (!isValidEmail(emailVal)) {
+          emailTooltip.textContent = "Please enter a complete, valid email.";
+          emailTooltip.classList.add('show');
+        } else {
+          emailTooltip.classList.remove('show');
+        }
+      } else {
+        emailTooltip.classList.remove('show');
+      }
+
+      const isNameFilled = nameInput.value.trim() !== '';
+      const isSubjectFilled = subjectInput.value.trim() !== '';
+      const isMessageFilled = messageInput.value.trim() !== '';
+      const isEmailValid = isValidEmail(emailVal);
+
+      if (isNameFilled && isSubjectFilled && isMessageFilled && isEmailValid) {
+        submitBtn.disabled = false;
+      } else {
+        submitBtn.disabled = true;
+      }
+    }
+
+    nameInput.addEventListener('input', validateForm);
+    emailInput.addEventListener('input', validateForm);
+    subjectInput.addEventListener('input', validateForm);
+    messageInput.addEventListener('input', validateForm);
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+      successModal.style.display = 'flex';
+
+      contactForm.reset();
+
+      submitBtn.disabled = true;
+    });
+
+    closeModalBtn.addEventListener('click', function() {
+      successModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(e) {
+      if (e.target === successModal) {
+        successModal.style.display = 'none';
+      }
+    });
+  });
