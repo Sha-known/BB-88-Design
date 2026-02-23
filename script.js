@@ -1,3 +1,4 @@
+// team casrds
 const cards = document.querySelectorAll('.team-card');
 const bubble = document.getElementById('dynamic-desc-box');
 const bTitle = document.getElementById('bubble-title');
@@ -180,5 +181,34 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target === successModal) {
         successModal.style.display = 'none';
       }
+    });
+  });
+
+
+  //for nav
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-main-links a');
+    
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+
+      navLinks.forEach(link => {
+        const sectionId = link.getAttribute('href').substring(1); 
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 150) {
+            currentSectionId = sectionId;
+          }
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
     });
   });
