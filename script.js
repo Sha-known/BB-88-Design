@@ -1,3 +1,20 @@
+// portfolio filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      if (filter === 'all' || item.dataset.category === filter) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
 // team casrds
 const cards = document.querySelectorAll('.team-card');
 const bubble = document.getElementById('dynamic-desc-box');
@@ -66,6 +83,13 @@ document.querySelectorAll('.about-card').forEach(card => {
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+
+// menu closed when nav link is clicked
+document.querySelectorAll('.nav-main-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
 
 
 //carousel button
