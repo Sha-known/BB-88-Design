@@ -292,7 +292,6 @@ nav {
   font-size: clamp(20px, 5vw, 35px);
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
-  text-stroke: 2px white; 
   letter-spacing: -2px;
   line-height: 1;
   margin-bottom: 10px;
@@ -402,7 +401,6 @@ nav {
   font-size: clamp(20px, 5vw, 35px);
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
-  text-stroke: 2px white; 
   letter-spacing: -2px;
   line-height: 1;
   margin-bottom: 5px;
@@ -413,7 +411,6 @@ nav {
   font-size: clamp(20px, 5vw, 25px);
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
-  text-stroke: 2px white; 
   line-height: 1;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -435,7 +432,7 @@ nav {
   position: relative;
   background: url('bg/background2.png') center center/cover no-repeat;
   padding: 100px 40px;
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -579,14 +576,14 @@ nav {
   height: auto;
 }
 
-@media (max-width: 600px) {
-  .bottom {
-    width: 120%;       
-    left: 50%;
-    transform: translateX(-50%);
-    height: auto;      
-    bottom: -10px;     
-  }
+@media (max-width: 480px) {
+.bottom {
+  width: 120%;       
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;      
+  bottom: -10px;     
+}
 }
 
 /*partner logo*/
