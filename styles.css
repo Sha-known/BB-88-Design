@@ -1632,7 +1632,7 @@ nav {
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
 
   .map-box {
     height: 200px;
@@ -1669,6 +1669,10 @@ nav {
 .branding-text {
   margin-top: 10px;
   margin-left: 50px;
+}
+
+.branding-text h2 {
+  text-align: center;
 }
 
 .branding-text p {
