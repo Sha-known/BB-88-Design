@@ -1098,6 +1098,7 @@ nav {
 .posts-section {
   position: relative;
   padding: 100px 40px;
+  min-height: 100vh;
   background-color: #fff;
   text-align: center;
   overflow: hidden;
