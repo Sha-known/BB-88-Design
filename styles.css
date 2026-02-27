@@ -1892,6 +1892,7 @@ nav {
 }
 
 @media (max-width: 600px) {
+
   .about-images {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -2038,6 +2039,24 @@ nav {
   }
 }
 
+/*for team section vector sizes*/
+@media (max-width: 768px) {
+  .team-section {
+    min-height: auto; 
+    padding: 60px 15px 180px 15px; 
+  }
+
+  .team-cloud-bg {
+    height: 15%; 
+    background-size: 100% auto; 
+  }
+
+  .team-vector-bg {
+    height: 20%; 
+    background-size: 100% auto; 
+    background-position: bottom center;
+  }
+}
 
 
 
