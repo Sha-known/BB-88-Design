@@ -136,15 +136,15 @@ nav {
 /* HERO */
 .hero {
   position: relative;
-  height: auto;
-  min-height: 120vh;
-  background: url('bg/backgroundvector1up.png') bottom center/cover no-repeat;
+  min-height: 200vh;
+  background: url('bg/background1.png') top left / 100% auto no-repeat; /*ung white bg toh sa underneath*/
+  background-color: #fff; 
   margin-top: -110px;
   padding-top: 110px;
   padding-bottom: 100px;
-  z-index: 1;
 }
 
+/*ung green line toh sa hero section*/
 .hero::after {
   content: '';
   display: block;
@@ -152,13 +152,63 @@ nav {
   height: 6px; 
   background-color: var(--green-dark); 
   position: absolute;
-  bottom: 0;
+  top: 50.5vw; 
   left: 0;
+  z-index: 1;
 }
 
+/* When the screen is 1260px or smaller */
+@media (max-width: 1260px) {
+  .hero::after {
+    top: 636px; 
+  }
+  
+}
 
+/*design and marketing something tong css*/
+.subhero-header {
+  position: sticky; 
+  z-index: 2;    
+  text-align: center;
+  margin-bottom: 50px; 
+  margin-top: 18vw; 
+}
+
+.subhero-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(20px, 5vw, 35px);
+  color: var(--green-dark); 
+  -webkit-text-stroke: 1px white; 
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.subhero-line {
+  width: 100px;
+  height: 4px;
+  background: var(--green-light);
+  margin: 18px auto 0 auto;
+  border-radius: 4px;
+}
+
+/*ung vector bg toh sa top-right, ginawa ko siya vector instead bg*/
+.vector-hero {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 55vw; 
+  min-width: 700px; 
+}
+.top-right { 
+  top: 0; 
+  right: 0; 
+}
+
+/*ung mga words and buttons sa left part sa hero section*/
 .hero-left {
   padding: 40px 80px 60px 60px;
+  margin-bottom: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -275,7 +325,7 @@ nav {
 
 /* ABOUT SECTION */
 .about-section {
-  background: url('bg/backgroundvector1down.png') bottom center/cover no-repeat;
+  background: url('bg/background2.png') bottom center/cover no-repeat;
   padding: 220px 60px;
   position: relative;
 }
@@ -1964,5 +2014,6 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
 
 
