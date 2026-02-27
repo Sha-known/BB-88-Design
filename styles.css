@@ -347,7 +347,7 @@ nav {
 /* ABOUT SECTION */
 .about-section {
   background: url('bg/background2.png') bottom center/cover no-repeat;
-  padding: 220px 60px;
+  padding: 220px 20px;
   position: relative;
 }
 
@@ -2037,6 +2037,7 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
