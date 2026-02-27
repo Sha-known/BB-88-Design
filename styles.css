@@ -15,6 +15,13 @@
   --bubble-border: #e0e0e0;
 }
 
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -135,6 +142,7 @@ nav {
 
 /* HERO */
 .hero {
+  overflow-x: hidden;
   position: relative;
   min-height: 200vh;
   background: url('bg/background1.png') top left / 100% auto no-repeat; /*ung white bg toh sa underneath*/
@@ -204,6 +212,19 @@ nav {
   top: 0; 
   right: 0; 
 }
+
+@media (max-width: 1260px) {
+  .vector-hero {
+    /* Stop shrinking! Lock it to a size that looks good */
+    width: 700px; 
+    
+    /* Pin the left edge of the image to the right-side of the screen */
+    /* This makes the right half of the image "fall off" the edge */
+    left: 70%; 
+    right: auto; 
+  }
+}
+
 
 /*ung mga words and buttons sa left part sa hero section*/
 .hero-left {
@@ -628,7 +649,7 @@ nav {
 
 @media (max-width: 480px) {
 .bottom {
-  width: 120%;       
+  width: 100%;       
   left: 50%;
   transform: translateX(-50%);
   height: auto;      
@@ -1827,7 +1848,7 @@ nav {
 
   .hero-title {
     font-weight: 500;
-    font-size: clamp(35px, 10vw, 50px);
+    font-size: 50px;
     white-space: normal;     
     width: 100%;
     margin-top: -10px; 
