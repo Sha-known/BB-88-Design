@@ -292,6 +292,8 @@ nav {
   animation: slideUp 0.7s ease 0.5s both;
 }
 
+/* --- PRIMARY BUTTON --- */
+/* --- PRIMARY BUTTON --- */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -300,40 +302,69 @@ nav {
   color: var(--white);
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 20px;
-  padding: 10px 50px;
+  
+  /* 1. FLUID FONT: Scales from ~18px on laptops up to 26px on large monitors */
+  font-size: clamp(18px, 1.5vw, 26px); 
+  
+  /* 2. AUTO-SCALING PADDING: 'em' means the padding grows dynamically as the font grows */
+  padding: 0.4em 2.4em; 
+  
+  border: 2px solid var(--green-dark); 
   border-radius: 50px;
   text-decoration: none;
   width: fit-content;
-  transition: all 0.25s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 20px rgba(45, 106, 45, 0.35);
 }
 
 .btn-primary:hover {
-  background: var(--green-mid);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(45, 106, 45, 0.45);
+  background: transparent;
+  color: var(--green-dark); 
+  transform: scale(1.05) translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(45, 106, 45, 0.2); 
 }
 
+
+/* --- VIDEO BUTTON --- */
 .btn-video {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  
+  /* 3. FLUID GAP: The space between text and icon grows slightly on big screens */
+  gap: clamp(10px, 1.5vw, 20px); 
+  
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 600;
-  font-size: 20px;
+  
+  /* 4. FLUID FONT: Matches the primary button */
+  font-size: clamp(18px, 1.5vw, 26px); 
+  
   width: fit-content;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
 }
 
-.btn-video:hover { color: var(--green-mid); }
-.btn-video:hover .play-icon { border-color: var(--green-mid); }
-.btn-video:hover .play-icon::after { border-left-color: var(--green-mid); }
+.btn-video:hover { 
+  color: var(--green-mid); 
+  transform: translateY(-2px);
+}
+
+.btn-video:hover .play-icon { 
+  border-color: var(--green-mid); 
+  transform: scale(1.15);
+  box-shadow: 0 4px 15px rgba(45, 106, 45, 0.15);
+}
+
+.btn-video:hover .play-icon::after { 
+  border-left-color: var(--green-mid); 
+  transform: scale(1.1) translateX(2px);
+}
 
 .play-icon {
-  width: 50px;
-  height: 50px;
+  /* 5. FLUID CIRCLE: Scales the play button circle from 45px up to 65px */
+  width: clamp(45px, 4vw, 65px);
+  height: clamp(45px, 4vw, 65px);
+  
   border-radius: 50%;
   border: 2px solid var(--text-dark);
   display: flex;
@@ -341,18 +372,21 @@ nav {
   justify-content: center;
   position: relative;
   flex-shrink: 0;
-  transition: border-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .play-icon::after {
   content: '';
   width: 0;
   height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 14px solid var(--text-dark);
+  
+  /* 6. FLUID TRIANGLE: Scales the actual play icon inside the circle */
+  border-top: clamp(8px, 0.7vw, 12px) solid transparent;
+  border-bottom: clamp(8px, 0.7vw, 12px) solid transparent;
+  border-left: clamp(14px, 1.2vw, 20px) solid var(--text-dark);
+  
   margin-left: 3px;
-  transition: border-left-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* ABOUT SECTION */
