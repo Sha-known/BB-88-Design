@@ -55,22 +55,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   width: 100%;
-  max-width: 1900px;
-  min-height: 70px; 
-  
-  /* 2. Scale the padding! 
-     Starts at 8px top/bottom on laptops, grows up to 16px on large monitors.
-     Left/right padding stays at 24px so the edges don't hug the logo/links too tightly. */
-  padding: clamp(8px, 1.2vw, 16px) 24px; 
-  
+  max-width: 1200px;
+  padding: 8px 16px;
   background: var(--white);
   border-radius: 50px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   box-sizing: border-box;
   overflow: hidden;
+
 }
+
 .nav-main-links a {
   white-space: nowrap;
   flex-shrink: 1;
