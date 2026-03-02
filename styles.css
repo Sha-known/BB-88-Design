@@ -660,7 +660,7 @@ nav {
   position: relative;
   z-index: 2;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(35px, 5vw, 50px);
+  font-size: clamp(35px, 5vw, 65px);
   color: var(--green-dark);
   font-weight: 800;
   -webkit-text-stroke: 1px white;
@@ -838,7 +838,7 @@ nav {
 
 .portfolio-main-title {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(40px, 5vw, 50px);
+  font-size: clamp(40px, 5vw, 65px);
   color: var(--green-dark);
   font-weight: 800;
   margin-bottom: 30px;
@@ -1426,7 +1426,7 @@ nav {
 
 .info-text strong {
   color: var(--green-dark);
-  font-size: 1.rem;
+  font-size: 1rem;
   margin-bottom: none;
 }
 
