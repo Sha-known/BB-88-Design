@@ -1646,31 +1646,34 @@ nav {
   color: #fff;
   letter-spacing: 1px;
 }
-
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 24px; 
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid #fff;
+  width: 36px; 
+  height: 36px;
+  
+  /*inner circle and dark icon */
+  background-color: #fff; 
+  color: var(--green-dark); 
   border-radius: 50%;
-  color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
   transition: all 0.3s ease;
+  outline: 1.5px solid #fff; /* outer ring */
+  outline-offset: 3px; /* space between the inner circle and outer ring */
 }
 
 .social-links a:hover {
-  background-color: #fff;
-  color: var(--green-dark);
-  transform: scale(1.05);
+  background-color: var(--green-dark);
+  color: var(--cream);
+  transform: scale(1.1);
 }
 
 .footer-bottom {
