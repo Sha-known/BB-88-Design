@@ -1149,19 +1149,19 @@ nav {
 }
 
 .team-description-box {
-  position: absolute; 
+  position: absolute;
   background: #fff;
   border: 4px solid var(--bubble-border);
-  border-radius: 25px;
-  padding: 25px;
-  width: 380px;
-  max-width: calc(100vw - 40px); 
+  border-radius: 16px;
+  padding: 20px 30px;
+  width: 560px;
+  max-width: calc(100vw - 40px);
   text-align: left;
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; 
+  pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
