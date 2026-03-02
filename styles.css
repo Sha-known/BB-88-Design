@@ -93,26 +93,9 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%); 
-  height: 4px;
-  border-radius: 4px;
-  background: var(--green-light);
-  width: 0px; 
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%; 
-}
-
-/*hide it on the active button */
-.nav-links a.active::after {
-  display: none;
+.nav-links a:hover {
+  background: var(--green-dark);
+  color: #fff; 
 }
 
 .nav-links a.active {
