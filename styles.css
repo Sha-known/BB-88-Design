@@ -23,6 +23,7 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -544,12 +545,13 @@ nav {
 .services-section {
   position: relative;
   background: url('bg/background2.png') center center/cover no-repeat;
-  min-height: 105vh; 
-  padding: 100px 40px 150px 40px; 
+  min-height: 105vh;
+  padding: 100px 40px 150px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  overflow-x: hidden;
 }
 
 .services-container {
@@ -820,6 +822,7 @@ nav {
   padding: 80px 20px;
   background: url('bg/background3.png') center center/cover no-repeat;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .portfolio-section::after {
@@ -2111,9 +2114,49 @@ nav {
   }
 
   .filter-btn {
-    white-space: nowrap; 
-    font-size: 14px; 
+    white-space: nowrap;
+    font-size: 14px;
     padding: 8px 6px;
   }
 }
 
+/* ── 320px fixes ── */
+@media (max-width: 480px) {
+
+  nav {
+    padding: 12px 12px;
+
+  .logo-icon {
+    width: clamp(120px, 40vw, 160px);
+  }
+
+  .hero-title {
+    white-space: normal;
+    word-break: break-word;
+    font-size: clamp(40px, 11vw, 60px);
+  }
+
+
+  .about-box {
+    padding: 20px 16px;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .vector-decor {
+    width: 130px;
+  }
+
+  .contact-form {
+    padding-left: 0;
+  }
+
+
+  #contact.services-section {
+    overflow-x: hidden;
+  }
+}
+}
