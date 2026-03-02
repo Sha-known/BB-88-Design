@@ -1,3 +1,20 @@
+// back to top
+const backToTopBtn = document.getElementById('backToTop');
+const heroSection = document.getElementById('home');
+
+window.addEventListener('scroll', () => {
+  const heroBoundary = heroSection.offsetTop + heroSection.offsetHeight;
+  if (window.scrollY > heroBoundary) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+});
+
 //image expands on
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('imageModal');
