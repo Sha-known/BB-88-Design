@@ -926,6 +926,7 @@ nav {
 .btn-see-more {
   display: inline-block;
   background: var(--green-dark);
+  border: 2px solid var(--green-dark); 
   color: #fff;
   text-decoration: none;
   padding: 12px 40px;
@@ -935,8 +936,10 @@ nav {
 }
 
 .btn-see-more:hover {
-  background: var(--green-mid);
-  transform: scale(1.05);
+  background: transparent;
+  color: var(--green-dark); 
+  transform: scale(1.05) translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(45, 106, 45, 0.2); 
 }
 
 
@@ -1323,6 +1326,12 @@ nav {
 .post-card:hover .read-more-link {
   background-color: var(--green-dark);
   color: #fff;
+}
+
+.read-more-link:hover {
+  color: var(--green-dark); 
+  transform: scale(1.05) translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(45, 106, 45, 0.2); 
 }
 
 
