@@ -1,3 +1,36 @@
+//image expands on
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('expandedImg');
+  const closeBtn = document.querySelector('.image-modal-close');
+  
+  // CHANGE THIS LINE: Now it selects images from BOTH the posts and the portfolio!
+  const clickableImages = document.querySelectorAll('.post-img-box img, .portfolio-img-container img');
+
+  // 1. Open modal when any of these images are clicked
+  clickableImages.forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.preventDefault(); 
+      e.stopPropagation(); 
+      
+      modalImg.src = this.src; 
+      modal.classList.add('show'); 
+    });
+  });
+
+  // 2. Close modal when the 'X' is clicked
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
+
+  // 3. Close modal if the user clicks anywhere on the dark background
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+    }
+  });
+});
+
 // portfolio filters
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
