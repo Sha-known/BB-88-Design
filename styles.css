@@ -1087,18 +1087,27 @@ nav {
 }
 
 .team-grid, .team-featured-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
   gap: 25px;
   margin-bottom: 25px;
+}
+
+.team-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-featured-row {
+  grid-template-columns: repeat(3, 1fr);
+  width: calc(75% - 6.25px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- TEAM CARD BASE STATE --- */
 .team-card {
   background: var(--green-dark);
   border-radius: 15px;
-  width: 350px; 
+  width: 100%;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -1957,7 +1966,6 @@ nav {
 
 @media (max-width: 1450px) {
   .team-card {
-    width: 280px; 
     min-height: 280px;
   }
   .team-icon-box {
@@ -1971,7 +1979,6 @@ nav {
 
 @media (max-width: 1200px) {
   .team-card {
-    width: 220px;
     min-height: 230px;
   }
   .team-icon-box {
@@ -1986,10 +1993,11 @@ nav {
 @media (max-width: 768px) {
   .team-grid, .team-featured-row {
     gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
-  .team-card { 
-    width: calc(50% - 15px); 
-    min-width: 150px;
+  .team-card {
+    min-width: 0;
     min-height: 200px;
   }
   .team-icon-box {
@@ -2005,10 +2013,13 @@ nav {
 }
 
 @media (max-width: 480px) {
+  .team-grid, .team-featured-row {
+    grid-template-columns: 1fr;
+  }
   .team-card {
-    width: 100%; 
     max-width: 300px;
     min-height: 220px;
+    margin: 0 auto;
   }
   .team-icon-box {
     height: 150px;
