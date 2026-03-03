@@ -388,7 +388,7 @@ nav {
 
 .about-header h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(20px, 5vw, 35px);
+  font-size: clamp(20px, 3vw, 45px);
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
   letter-spacing: -2px;
@@ -508,7 +508,7 @@ nav {
 
 .about-box h4 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(20px, 5vw, 25px);
+  font-size: clamp(20px, 2vw, 30px);
   color: var(--green-dark); 
   -webkit-text-stroke: 1px white; 
   line-height: 1;
@@ -1366,7 +1366,7 @@ nav {
 
 .post-title-label h3 {
   color: var(--green-dark);
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 20px);
   margin: 0;
   transition: color 0.4s ease;
 }
@@ -1765,7 +1765,7 @@ nav {
 
 .follow-heading {
   font-family: 'Pacifico', cursive;
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2.5vw, 3rem);
   font-weight: 400;
   margin: 0 0 15px 0;
   color: #fff;
@@ -1807,8 +1807,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px; 
-  font-size: 0.95rem;
+  gap: 25px;
+  font-size: clamp(0.75rem, 0.9vw, 1rem);
   color: #fff;
 }
 
@@ -1907,7 +1907,7 @@ nav {
 
 .branding-text {
   margin-top: 10px;
-  margin-left: 50px;
+  margin-left: 0;
 }
 
 .branding-text h2 {
@@ -2000,13 +2000,13 @@ nav {
     max-width: 120px;
   }
 }
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
   .posts-container {
     flex-wrap: wrap; 
   }
   .post-card {
-    flex: 1 1 calc(50% - 30px); 
-    min-width: 285px; 
+    flex: 1 1 calc(50% - 30px);
+    min-width: 240px;
   }
 }
 
@@ -2281,11 +2281,12 @@ nav {
   }
 }
 
-/* ── 320px fixes ── */
+/* ── small screen fixes ── */
 @media (max-width: 480px) {
 
   nav {
     padding: 12px 12px;
+  }
 
   .logo-icon {
     width: clamp(120px, 40vw, 160px);
@@ -2296,7 +2297,6 @@ nav {
     word-break: break-word;
     font-size: clamp(40px, 11vw, 60px);
   }
-
 
   .about-box {
     padding: 20px 16px;
@@ -2315,9 +2315,56 @@ nav {
     padding-left: 0;
   }
 
-
-  #contact {
+  #contact.services-section {
     overflow-x: hidden;
   }
 }
+
+/* ── large screen scaling (1440px+) ── */
+@media (min-width: 1440px) {
+
+  /* Social icons grow with screen */
+  .social-links a {
+    width: clamp(36px, 3vw, 52px);
+    height: clamp(36px, 3vw, 52px);
+    font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+  }
+
+  /* Post image box taller on large screens */
+  .post-img-box {
+    height: clamp(200px, 15vw, 320px);
+  }
+
+  /* About card icons scale up */
+  .about-card img {
+    width: clamp(80px, 5vw, 110px);
+    height: clamp(80px, 5vw, 110px);
+  }
+
+  /* About card itself scales up */
+  .about-card {
+    width: clamp(280px, 18vw, 360px);
+    height: clamp(200px, 14vw, 280px);
+  }
+
+  /* Service cards grow slightly */
+  .service-card {
+    width: clamp(350px, 22vw, 440px);
+    height: clamp(350px, 22vw, 440px);
+  }
+
+  /* Portfolio grid allows wider cards */
+  .portfolio-grid {
+    max-width: 1600px;
+  }
+
+  /* Posts container widens */
+  .posts-container {
+    max-width: 1600px;
+  }
+
+  /* Contact container widens */
+  .contact-container {
+    max-width: 1400px;
+  }
 }
