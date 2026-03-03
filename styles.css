@@ -1105,9 +1105,11 @@ nav {
   justify-content: center;
   transition: all 0.4s ease;
   overflow: hidden; 
+  position: relative;
 }
 
 .team-icon-box img {
+  position: absolute;
   max-width: 80px; 
   height: auto;
   transition: all 0.4s ease;
@@ -1124,23 +1126,24 @@ nav {
 }
 
 .team-card:hover {
-  background: #cacacac9; 
-  border: 4px solid #fff;
+  background: #a1a1a1c9; 
+  border: 10px solid #fff;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transform: translateY(-5px);
   padding-bottom: 12px; 
 }
 
 .team-card:hover .team-icon-box {
-  background: var(--green-gradient);
-  border-radius: 50%; 
-  width: 140px;
-  height: 140px;
-  margin: 0 auto;
+  background: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 130px;
+  opacity: 0; /* Make normal icon area disappear */
+  margin: 0;
 }
 
-.team-card:hover .team-icon-box img {
-  transform: scale(0.85); 
+.team-icon-box .icon-inverted {
+  opacity: 0;
 }
 
 .team-card:hover .team-label {
@@ -1149,6 +1152,34 @@ nav {
   height: 0;
   margin: 0;
   padding: 0;
+}
+
+.hover-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center everything */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.team-card:hover .hover-thumbnail {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* The small centered camera icon */
+.mini-icon {
+  max-width: 150px; 
+  height: auto;
+  display: block;
 }
 
 .team-description-box {
