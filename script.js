@@ -238,13 +238,41 @@ document.addEventListener('DOMContentLoaded', function() {
     messageInput.addEventListener('input', validateForm);
 
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault(); 
-
-      successModal.style.display = 'flex';
-
-      contactForm.reset();
-
+      e.preventDefault(); // Stop normal page reload
+      
+      // Change button text to show it's working
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = "Sending...";
       submitBtn.disabled = true;
+
+      // Gather form data
+      const formData = new FormData(contactForm);
+
+      // Send the data to Web3Forms API
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          // Success! Show your custom modal
+          successModal.style.display = 'flex';
+          contactForm.reset();
+        } else {
+          // API error
+          console.log(response);
+          alert(json.message);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        alert("Something went wrong! Please try again later.");
+      })
+      .finally(() => {
+        // Reset button state
+        submitBtn.textContent = originalBtnText;
+      });
     });
 
     closeModalBtn.addEventListener('click', function() {

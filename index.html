@@ -559,19 +559,23 @@
     </div>
 
     <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <input type="text" id="contactName" placeholder="Your name" required>
-        <div class="email-wrapper">
-          <input type="email" id="contactEmail" placeholder="Your email" required>
-          <span id="emailTooltip" class="custom-tooltip">Please include an '@' in the email address.</span>
-        </div>
-      </div>
-      <input type="text" id="contactSubject" placeholder="Subject" required>
-      <textarea id="contactMessage" placeholder="Message" rows="8" required></textarea>
-      <div class="btn-container">
-        <button type="submit" id="submitBtn" disabled>Send Message</button>
-      </div>
-    </form>
+  <input type="hidden" name="access_key" value="9f807cf6-36fc-411b-b841-ca9bdbab5bf7">
+
+  <div class="form-row">
+    <input type="text" id="contactName" name="name" placeholder="Your name" required>
+    <div class="email-wrapper">
+      <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+      <span id="emailTooltip" class="custom-tooltip">Please include an '@' in the email address.</span>
+    </div>
+  </div>
+  
+  <input type="text" id="contactSubject" name="subject" placeholder="Subject" required>
+  <textarea id="contactMessage" name="message" placeholder="Message" rows="8" required></textarea>
+  
+  <div class="btn-container">
+    <button type="submit" id="submitBtn" disabled>Send Message</button>
+  </div>
+</form>
   </div>
 </div>
 </section>
